@@ -1,2 +1,2 @@
 # Aurelia Demo
-Testing out Aurelia
+Testing out Aurelia and Hapi
