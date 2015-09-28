@@ -7,7 +7,7 @@ export class App {
             {
                 route: ['','home'],
                 name: 'home',
-                moduleId: 'home/home',
+                moduleId: 'home',
                 nav: true,
                 title: 'Home'
             }
