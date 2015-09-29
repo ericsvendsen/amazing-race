@@ -1,0 +1,30 @@
+<template>
+    <div class="row">
+        <div class="col-xs-6">
+            <h2>Racers</h2>
+            <table class="table table-striped">
+                <tr>
+                    <th>Team</th>
+                    <th>Latest Finish</th>
+                </tr>
+                <tr repeat.for="racer of racers">
+                    <td>${racer.name}</td>
+                    <td>${racer.getLatestResult()}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-xs-6">
+            <h2>Players</h2>
+            <table class="table table-striped">
+                <tr>
+                    <th>Name</th>
+                    <th>Points</th>
+                </tr>
+                <tr repeat.for="player of players">
+                    <td>${player.name}</td>
+                    <td>${player.points}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</template>
