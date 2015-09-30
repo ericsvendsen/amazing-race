@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-export class RacerModel {
+export class Racer {
     constructor(id, name, hashtag, isEliminated, results) {
         this.id = id;
         this.name = name;
@@ -17,7 +17,7 @@ export class RacerModel {
     }
 
     build(data) {
-        return new RacerModel(
+        return new Racer(
             data.id,
             data.name,
             data.hashtag,
