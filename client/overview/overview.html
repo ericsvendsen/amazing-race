@@ -2,28 +2,38 @@
     <div class="row">
         <div class="col-xs-6">
             <h2>Racers</h2>
-            <table class="table table-striped">
-                <tr>
-                    <th>Team</th>
-                    <th>Latest Finish</th>
-                </tr>
-                <tr repeat.for="racer of racers">
-                    <td>${racer.name}</td>
-                    <td>${racer.getLatestResult()}</td>
-                </tr>
+            <table class="table table-striped table-hover linked-rows">
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Hashtag</th>
+                        <th>Latest Finish</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr repeat.for="racer of racers" click.trigger="$parent.viewRacer(racer.id)">
+                        <td>${racer.name}</td>
+                        <td>${racer.hashtag}</td>
+                        <td>${racer.getLatestResult()}</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
         <div class="col-xs-6">
             <h2>Players</h2>
-            <table class="table table-striped">
-                <tr>
-                    <th>Name</th>
-                    <th>Points</th>
-                </tr>
-                <tr repeat.for="player of players">
-                    <td>${player.name}</td>
-                    <td>${player.points}</td>
-                </tr>
+            <table class="table table-striped table-hover linked-rows">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr repeat.for="player of players" click.trigger="$parent.viewPlayer(player.id)">
+                        <td>${player.name}</td>
+                        <td>${player.points}</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>

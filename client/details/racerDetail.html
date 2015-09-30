@@ -1,0 +1,15 @@
+<template>
+    <h2>${racer.name} <span class="label label-danger" show.bind="racer.isEliminated">ELIMINATED!</span> <a href="#/" class="btn btn-default btn-sm"><i class="fa fa-arrow-left"></i></a></h2>
+    <strong>${racer.hashtag}</strong>
+    <h3>Finishes</h3>
+    <table class="table table-striped">
+        <tr>
+            <th>Leg</th>
+            <th>Result</th>
+        </tr>
+        <tr repeat.for="result of racer.results">
+            <td>${result.leg}</td>
+            <td>${result.result}</td>
+        </tr>
+    </table>
+</template>

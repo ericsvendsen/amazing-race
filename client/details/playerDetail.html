@@ -1,0 +1,23 @@
+<template>
+    <h2>${player.name} <span class="label label-primary" show.bind="player.overallWinner > 0">${getRacer(player.overallWinner)}</span> <a href="#/" class="btn btn-default btn-sm"><i class="fa fa-arrow-left"></i></a></h2>
+    <strong>Points:</strong> ${player.points}
+    <h3>Picks</h3>
+    <table class="table table-striped">
+        <tr>
+            <th>Leg</th>
+            <th>Picks</th>
+            <th></th>
+        </tr>
+        <tr repeat.for="pick of player.picks">
+            <td>${pick.leg}</td>
+            <td>
+                <ul class="list-unstyled">
+                    <li><strong>Winner:</strong> ${$parent.getRacer(pick.winner)}</li>
+                    <li><strong>Loser:</strong> ${$parent.getRacer(pick.loser)}</li>
+                    <li><strong>Survivor:</strong> ${$parent.getRacer(pick.survivor)}</li>
+                </ul>
+            </td>
+            <td><button class="btn btn-default btn-sm" click.trigger="$parent.editPicks(pick.leg)"></button></td>
+        </tr>
+    </table>
+</template>

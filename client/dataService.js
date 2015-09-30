@@ -20,8 +20,8 @@ export class DataService {
             });
     }
 
-    getRacer(racerId) {
-        return this.http.get(`${baseUrl}/racers/${racerId}`)
+    getRacer(id) {
+        return this.http.get(`${baseUrl}/racers/${id}`)
             .then(response => response.content);
     }
 
@@ -30,5 +30,10 @@ export class DataService {
             .then(response => {
                 return this.player.transformer(response.content);
             });
+    }
+
+    getPlayer(id) {
+        return this.http.get(`${baseUrl}/players/${id}`)
+            .then(response => response.content);
     }
 }

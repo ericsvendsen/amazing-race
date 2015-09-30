@@ -1,0 +1,5 @@
+.table-hover.linked-rows tbody tr:hover {
+    cursor: pointer;
+    background: #286090;
+    color: #fff;
+}
