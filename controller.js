@@ -1,6 +1,7 @@
 var Boom = require('boom'),
     Racer = require('./models/Racer'),
-    Player = require('./models/Player');
+    Player = require('./models/Player'),
+    Leg = require('./models/Leg');
 
 exports.getRacers = {
     handler: function (request, reply) {
@@ -49,3 +50,15 @@ exports.getPlayer = {
         });
     }
 };
+
+exports.getLegs = {
+    handler: function (request, reply) {
+        Leg.model.find({}, function (err, legs) {
+            if (!err) {
+                reply(legs);
+            } else {
+                reply(Boom.badImplementation(err)); // 500 error
+            }
+        });
+    }
+}

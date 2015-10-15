@@ -36,5 +36,10 @@ exports.endpoints = [
         method: 'GET',
         path: '/api/players/{playerId}',
         config: Controller.getPlayer
+    },
+    {
+        method: 'GET',
+        path: '/api/legs',
+        config: Controller.getLegs
     }
 ];

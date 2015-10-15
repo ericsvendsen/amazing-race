@@ -25,6 +25,13 @@ export class App {
                 moduleId: 'details/playerDetail',
                 nav: false,
                 title: 'Player'
+            },
+            {
+                route: 'update',
+                name: 'update',
+                moduleId: 'update/update',
+                nav: true,
+                title: 'Update'
             }
         ]);
 
