@@ -27,6 +27,22 @@ exports.getRacer = {
     }
 };
 
+// should probably do some sort of proper multi-document update instead of this
+exports.updateRacers = {
+    handler: function (request, reply) {
+        Racer.model.find({}, function(err, racers) {
+            if (!err) {
+                racers.forEach(function (racer, idx) {
+                    racer.results = request.payload[idx].results;
+                    racer.save();
+                });
+            } else {
+                reply(Boom.badImplementation(err)); // 500 error
+            }
+        });
+    }
+};
+
 exports.getPlayers = {
     handler: function (request, reply) {
         Player.model.find({}, function (err, players) {

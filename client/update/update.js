@@ -22,7 +22,7 @@ export class Update {
     }
 
     update() {
-        debugger;
+        this.dataService.updateRacers(this.racers);
     }
 
     activate() {

@@ -27,6 +27,11 @@ export class DataService {
             .then(response => response.content);
     }
 
+    updateRacers(racers) {
+        return this.http.put(`${baseUrl}/racers`, racers)
+            .then(response => response.content);
+    }
+
     getPlayers() {
         return this.http.get(`${baseUrl}/players`)
             .then(response => {

@@ -3,3 +3,8 @@
     background: #286090;
     color: #fff;
 }
+
+.eliminated {
+    text-decoration: line-through;
+    color: #ccc;
+}

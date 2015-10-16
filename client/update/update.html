@@ -7,12 +7,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr repeat.for="racer of racers">
+            <tr repeat.for="racer of racers" class.bind="racer.isEliminated ? 'eliminated' : ''">
                 <td>${racer.name}</td>
                 <td repeat.for="result of racer.results">
-                    <select>
-                        <option selected.bind="place === 0">Place...</option>
-                        <option repeat.for="place of $parent.$parent.places" selected.bind="place === result.result">${place}</option>
+                    <select disabled.bind="racer.isEliminated" value.bind="result.result">
+                        <option selected.bind="result.result === 0">Place...</option>
+                        <option repeat.for="place of $parent.$parent.places" selected.bind="place === $parent.result.result" model.bind="place">${place}</option>
                     </select>
                 </td>
             </tr>

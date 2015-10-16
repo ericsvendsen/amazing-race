@@ -28,6 +28,11 @@ exports.endpoints = [
         config: Controller.getRacer
     },
     {
+        method: 'PUT',
+        path: '/api/racers',
+        config: Controller.updateRacers
+    },
+    {
         method: 'GET',
         path: '/api/players',
         config: Controller.getPlayers
