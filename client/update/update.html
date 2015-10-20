@@ -11,7 +11,7 @@
                 <td>${racer.name}</td>
                 <td repeat.for="result of racer.results">
                     <select disabled.bind="racer.isEliminated" value.bind="result.result">
-                        <option selected.bind="result.result === 0">Place...</option>
+                        <option selected.bind="result.result === 0" value="0">Place...</option>
                         <option repeat.for="place of $parent.$parent.places" selected.bind="place === $parent.result.result" model.bind="place">${place}</option>
                     </select>
                 </td>
