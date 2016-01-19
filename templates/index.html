@@ -10,6 +10,13 @@
     <script src="/jspm_packages/system.js"></script>
     <script src="/config.js"></script>
     <script>
+        System.config({
+            babelOptions: {
+                "optional": [
+                    "es7.decorators"
+                ]
+            }
+        });
         System.import('aurelia-bootstrapper');
     </script>
 
